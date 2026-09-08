@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-bg: #F9FAFB;
+  --color-surface: #FFFFFF;
+  --color-text: #1F2937;
+  --color-muted: #6B7280;
+  --color-accent: #059669;
+  --color-accent-hover: #047857;
+  --color-border-subtle: #E5E7EB;
+
+  --radius-card: 12px;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom utility classes matching brief */
+.bg-bg { background-color: #F9FAFB; }
+.bg-surface { background-color: #FFFFFF; }
+.text-main { color: #1F2937; }
+.text-muted { color: #6B7280; }
+.border-card { border: 1px solid #E5E7EB; }
+.rounded-card { border-radius: 12px; }
+.bg-accent { background-color: #059669; }
+.hover\:bg-accent-hover:hover { background-color: #047857; }
+.text-accent { color: #059669; }
+.border-accent { border-color: #059669; }
+
+/* Focus ring for accessibility */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#059669] focus-visible:ring-offset-2;
+}
+
+/* Tabular numbers for clean stats/time/step numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
